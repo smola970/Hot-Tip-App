@@ -1,0 +1,41 @@
+<h1>Listing referrals</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Company name</th>
+      <th>Contact name</th>
+      <th>Contact email</th>
+      <th>Contact mobile</th>
+      <th>Phone</th>
+      <th>Message</th>
+      <th>Machine brand</th>
+      <th>Machine weightclass</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @referrals.each do |referral| %>
+      <tr>
+        <td><%= referral.user_id %></td>
+        <td><%= referral.company_name %></td>
+        <td><%= referral.contact_name %></td>
+        <td><%= referral.contact_email %></td>
+        <td><%= referral.contact_mobile %></td>
+        <td><%= referral.phone %></td>
+        <td><%= referral.message %></td>
+        <td><%= referral.machine_brand %></td>
+        <td><%= referral.machine_weightclass %></td>
+        <td><%= link_to 'Show', referral %></td>
+        <td><%= link_to 'Edit', edit_referral_path(referral) %></td>
+        <td><%= link_to 'Destroy', referral, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Referral', new_referral_path %>
